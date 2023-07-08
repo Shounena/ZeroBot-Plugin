@@ -59,7 +59,7 @@ func init() { // 插件主体
 			"- 离谱\n- 答应我",
 		PublicDataFolder: "Atri",
 		OnEnable: func(ctx *zero.Ctx) {
-			ctx.SendChain(message.Text("嗯呜呜……夏生先生……？"))
+			ctx.SendChain(message.Text("休眠中…请勿打扰。"))
 		},
 		OnDisable: func(ctx *zero.Ctx) {
 			ctx.SendChain(message.Text("Zzz……Zzz……"))
@@ -71,7 +71,7 @@ func init() { // 插件主体
 		Handle(func(ctx *zero.Ctx) {
 			switch rand.Intn(2) {
 			case 0:
-				ctx.SendChain(randText("萝卜子是对机器人的蔑称！", "是亚托莉......萝卜子可是对机器人的蔑称"))
+				ctx.SendChain(randText("萝卜子是对机器人的蔑称哦。", "请称呼我为TREE。"))
 			case 1:
 				ctx.SendChain(dgtr.randRecord("RocketPunch.amr"))
 			}
@@ -92,34 +92,23 @@ func init() { // 插件主体
 				ctx.SendChain(message.Reply(ctx.Event.MessageID), randText(
 					"zzzz......",
 					"zzzzzzzz......",
-					"zzz...好涩哦..zzz....",
-					"别...不要..zzz..那..zzz..",
-					"嘻嘻..zzz..呐~..zzzz..",
-					"...zzz....哧溜哧溜....",
+					"zzz...zzz....",
+					"zzz....zzz..",
 				))
 			case now >= 6 && now < 9:
 				ctx.SendChain(message.Reply(ctx.Event.MessageID), randText(
-					"啊......早上好...(哈欠)",
-					"唔......吧唧...早上...哈啊啊~~~\n早上好......",
-					"早上好......",
-					"早上好呜......呼啊啊~~~~",
-					"啊......早上好。\n昨晚也很激情呢！",
-					"吧唧吧唧......怎么了...已经早上了么...",
-					"早上好！",
-					"......看起来像是傍晚，其实已经早上了吗？",
-					"早上好......欸~~~脸好近呢",
+					"早安。",
+					"早上好，已为您备份好昨日的工作数据。",
 				))
 			case now >= 9 && now < 18:
 				ctx.SendChain(message.Reply(ctx.Event.MessageID), randText(
-					"哼！这个点还早啥，昨晚干啥去了！？",
-					"熬夜了对吧熬夜了对吧熬夜了对吧？？？！",
-					"是不是熬夜是不是熬夜是不是熬夜？！",
+					"现在的时间不符合人类定义的早上哦，您熬夜了吗？",
+					"您是现在才起床吗？较多临床数据指出早睡早起的人能活更久。",
 				))
 			case now >= 18 && now < 24:
 				ctx.SendChain(message.Reply(ctx.Event.MessageID), randText(
-					"早个啥？哼唧！我都准备洗洗睡了！",
-					"不是...你看看几点了，哼！",
-					"晚上好哇",
+					"现在应该说晚安更合适哦。",
+					"晚上好。",
 				))
 			}
 		})
@@ -128,10 +117,9 @@ func init() { // 插件主体
 			now := time.Now().Hour()
 			if now > 11 && now < 15 { // 中午
 				ctx.SendChain(message.Reply(ctx.Event.MessageID), randText(
-					"午安w",
-					"午觉要好好睡哦，ATRI会陪伴在你身旁的w",
-					"嗯哼哼~睡吧，就像平常一样安眠吧~o(≧▽≦)o",
-					"睡你午觉去！哼唧！！",
+					"午安:->",
+					"鉴于您昨日的作息安排，推荐您进行午休，TREE会在必要的时候唤醒您。",
+					"中午好。",
 				))
 			}
 		})
@@ -143,71 +131,43 @@ func init() { // 插件主体
 				ctx.SendChain(message.Reply(ctx.Event.MessageID), randText(
 					"zzzz......",
 					"zzzzzzzz......",
-					"zzz...好涩哦..zzz....",
-					"别...不要..zzz..那..zzz..",
-					"嘻嘻..zzz..呐~..zzzz..",
-					"...zzz....哧溜哧溜....",
 				))
 			case now >= 6 && now < 11:
 				ctx.SendChain(message.Reply(ctx.Event.MessageID), randText(
-					"你可猝死算了吧！",
-					"？啊这",
-					"亲，这边建议赶快去睡觉呢~~~",
-					"不可忍不可忍不可忍！！为何这还不猝死！！",
+					"当心猝死。",
+					"？",
+					"这边建议您立刻去睡觉。",
 				))
 			case now >= 11 && now < 15:
 				ctx.SendChain(message.Reply(ctx.Event.MessageID), randText(
-					"午安w",
-					"午觉要好好睡哦，ATRI会陪伴在你身旁的w",
-					"嗯哼哼~睡吧，就像平常一样安眠吧~o(≧▽≦)o",
-					"睡你午觉去！哼唧！！",
+					"午安:->",
+					"鉴于您昨日的作息安排，推荐您进行午休，TREE会在必要的时候唤醒您。",
+					"中午好。",
 				))
 			case now >= 15 && now < 19:
 				ctx.SendChain(message.Reply(ctx.Event.MessageID), randText(
-					"难不成？？晚上不想睡觉？？现在休息",
-					"就......挺离谱的...现在睡觉",
-					"现在还是白天哦，睡觉还太早了",
+					"您还有未完成的工作，现在还不能休息哦。",
+					"现在还是白天哦，睡觉还太早了。",
 				))
 			case now >= 19 && now < 24:
 				ctx.SendChain(message.Reply(ctx.Event.MessageID), randText(
-					"嗯哼哼~睡吧，就像平常一样安眠吧~o(≧▽≦)o",
-					"......(打瞌睡)",
-					"呼...呼...已经睡着了哦~...呼......",
-					"......我、我会在这守着你的，请务必好好睡着",
+					"晚安，系统祝您一夜好梦。",
+					"已为您定好明早的闹钟，祝安眠。",
 				))
 			}
 		})
 	engine.OnKeywordGroup([]string{"高性能", "太棒了", "すごい", "sugoi", "斯国一", "よかった"}, zero.OnlyToMe).SetBlock(true).
 		Handle(func(ctx *zero.Ctx) {
 			ctx.SendChain(randText(
-				"当然，我是高性能的嘛~！",
-				"小事一桩，我是高性能的嘛",
-				"怎么样？还是我比较高性能吧？",
-				"哼哼！我果然是高性能的呢！",
-				"因为我是高性能的嘛！嗯哼！",
-				"因为我是高性能的呢！",
-				"哎呀~，我可真是太高性能了",
-				"正是，因为我是高性能的",
-				"是的。我是高性能的嘛♪",
-				"毕竟我可是高性能的！",
-				"嘿嘿，我的高性能发挥出来啦♪",
-				"我果然是很高性能的机器人吧！",
-				"是吧！谁叫我这么高性能呢！哼哼！",
-				"交给我吧，有高性能的我陪着呢",
-				"呣......我的高性能，毫无遗憾地施展出来了......",
+				"因为我是高性能且高智能的AI。",
+				"毕竟这是造物主们的智慧结晶呢。",
 			))
 		})
 	engine.OnKeywordGroup([]string{"没事", "没关系", "大丈夫", "还好", "不要紧", "没出大问题", "没伤到哪"}, zero.OnlyToMe).SetBlock(true).
 		Handle(func(ctx *zero.Ctx) {
 			ctx.SendChain(randText(
-				"当然，我是高性能的嘛~！",
-				"没事没事，因为我是高性能的嘛！嗯哼！",
-				"没事的，因为我是高性能的呢！",
-				"正是，因为我是高性能的",
-				"是的。我是高性能的嘛♪",
-				"毕竟我可是高性能的！",
-				"那种程度的事不算什么的。\n别看我这样，我可是高性能的",
-				"没问题的，我可是高性能的",
+				"没关系，TREE正在协助解决。",
+				"不用担心，系统会协助您解决。",
 			))
 		})
 
@@ -225,13 +185,13 @@ func init() { // 插件主体
 		})
 	engine.OnKeywordGroup([]string{"我好了"}).SetBlock(true).
 		Handle(func(ctx *zero.Ctx) {
-			ctx.SendChain(message.Reply(ctx.Event.MessageID), randText("不许好！", "憋回去！"))
+			ctx.SendChain(message.Reply(ctx.Event.MessageID), randText("？", "我坏了。"))
 		})
 	engine.OnFullMatchGroup([]string{"？", "?", "¿"}).SetBlock(true).
 		Handle(func(ctx *zero.Ctx) {
 			switch rand.Intn(5) {
 			case 0:
-				ctx.SendChain(randText("?", "？", "嗯？", "(。´・ω・)ん?", "ん？"))
+				ctx.SendChain(randText("?", "？", "嗯？", "ん？"))
 			case 1, 2:
 				ctx.SendChain(dgtr.randImage("WH.jpg", "WH1.jpg", "WH2.jpg", "WH3.jpg"))
 			}
