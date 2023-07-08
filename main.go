@@ -36,7 +36,7 @@ import (
 
 	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/sleep_manage" // 统计睡眠时间
 
-	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/atri" // ATRI词库
+	// _ "github.com/FloatTech/ZeroBot-Plugin/plugin/atri" // ATRI词库
 
 	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/manager" // 群管
 
@@ -224,7 +224,7 @@ func init() {
 	// 直接写死 URL 时，请更改下面第二个参数
 	url := flag.String("u", "ws://127.0.0.1:6700", "Set Url of WSClient.")
 	// 默认昵称
-	adana := flag.String("n", "卷卷", "Set default nickname.")
+	adana := flag.String("n", "斯恩", "Set default nickname.")
 	prefix := flag.String("p", "/", "Set command prefix.")
 	runcfg := flag.String("c", "", "Run from config file.")
 	save := flag.String("s", "", "Save default config to file and exit.")
@@ -256,7 +256,7 @@ func init() {
 
 	// 通过代码写死的方式添加主人账号
 	 sus = append(sus, 727571516)
-	// sus = append(sus, 87654321)
+	 sus = append(sus, 568967668)
 
 	// 启用 webui
 	// go webctrl.RunGui(*g)
@@ -284,7 +284,7 @@ func init() {
 	}
 	config.W = []*driver.WSClient{driver.NewWebSocketClient(*url, *token)}
 	config.Z = zero.Config{
-		NickName:       append([]string{*adana}, "卷卷", "卷宝", "理亚", "Ria"),
+		NickName:       append([]string{*adana}, "斯恩", "TREE"),
 		CommandPrefix:  *prefix,
 		SuperUsers:     sus,
 		RingLen:        *rsz,
